@@ -1,3 +1,16 @@
+.trademark {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    color: lightcyan;
+}
+
+#trademark {
+    float: left;
+    content: 'Shubham Ashish';
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -8,34 +21,40 @@ body {
     text-align: center;
 }
 :root {
-    --color1: #a8ea0d;
-    --color2: #043f0d;
+    --bg-gradient-onyx: linear-gradient(
+        to bottom right,
+        hsl(120, 63%, 8%) 31%,
+        hsl(0, 0%, 0%) 97%
+    );
 }
-
-/* body {
-    background: linear-gradient(to right, var(--color1), var(--color2));
-} */
+:root {
+    --bg-gradient-snake: linear-gradient(
+        to bottom right,
+        hsl(0, 100%, 50%) 31%,
+        hsl(12, 95%, 15%) 97%
+    );
+}
 
 #game-arena {
     width: 613px;
     height: 615px;
-    
+    background: var(--bg-gradient-onyx);
     position: relative;
-    border: 1px solid #002c07;
+    border: 1px solid #000b03;
     margin-bottom: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 #score-board {
-    font-size: x-large;
+font-size: xx-large;
     font-weight: bold;
-    color: rgb(131, 227, 203);
+    color: rgb(0, 255, 136);
     margin: 10px 0;
 }
 
 .start-button {
     background-color: rgb(2, 59, 26);
-    color: white;
+    color: rgba(246, 255, 0, 0.932);
     padding: 15px 30px;
     text-align: center;
     text-decoration: none;
@@ -49,22 +68,47 @@ body {
 .food {
     width: 20px;
     height: 20px;
-    background-color: rgb(143, 248, 6);
+    background: linear-gradient(to right, #00db42, #d9ff00);
     position: absolute;
     border-radius: 50%;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
     animation: blink 1s infinite;
 }
 
 @keyframes blink {
-    50% {
+    0%, 50% {
+        opacity: 1;
+    }
+    25% {
         opacity: 0.5;
+    }
+    75% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
     }
 }
 
 .snake {
     width: 20px;
     height: 20px;
-    background-color: rgb(46, 91, 1);
+    background: linear-gradient(to right, #00ff00, #0000ff);
     position: absolute;
     border-radius: 5px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    transform: rotate(15deg);
+    animation: snake-move 1s infinite;
+}
+
+@keyframes snake-move {
+    0% {
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(15deg);
+    }
 }
