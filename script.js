@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if(gameSpeed > 30) {
                 clearInterval(intervalId);
 
-                gameSpeed -= 10
+                gameSpeed -= 1
 
                 gameLoop();
 
