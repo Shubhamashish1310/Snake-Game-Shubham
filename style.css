@@ -19,6 +19,7 @@ body {
     height: 100vh;
     background-color: antiquewhite;
     text-align: center;
+    
 }
 :root {
     --bg-gradient-onyx: linear-gradient(
